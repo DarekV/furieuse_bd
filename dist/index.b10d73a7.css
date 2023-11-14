@@ -5175,13 +5175,15 @@ footer {
   height: 100vh;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 
 .map-background {
-  height: 200%;
-  width: 200%;
+  height: 100vh;
+  width: 100%;
   background-image: url("map.1952d5e2.png");
-  background-size: cover;
+  background-position: center;
+  background-size: 100%;
   position: absolute;
   top: 0;
   left: 0;

@@ -541,15 +541,47 @@ const tl = (0, _gsap.gsap).timeline({
     scrollTrigger: {
         trigger: ".map",
         start: "top top",
-        end: "+=300",
-        scrub: true,
+        end: "+=5000",
+        scrub: 2,
         pin: true
     }
 });
 tl.to(".map-background", {
-    backgroundPosition: "100% 50%",
-    ease: "none",
-    duration: 1
+    scale: 2.5,
+    x: "700px",
+    y: "550px",
+    duration: 4,
+    ease: "power1.inOut"
+});
+tl.to(".map-background", {
+    scale: 2.5,
+    x: "600px",
+    y: "350px",
+    duration: 2
+});
+tl.to(".map-background", {
+    scale: 2.5,
+    x: "-600px",
+    y: "750px",
+    duration: 4
+});
+tl.to(".map-background", {
+    scale: 2.5,
+    x: "-1050px",
+    y: "-350px",
+    duration: 4
+});
+tl.to(".map-background", {
+    scale: 2.5,
+    x: "-1000px",
+    y: "-750px",
+    duration: 2
+});
+tl.to(".map-background", {
+    scale: 1,
+    x: "0",
+    y: "0",
+    duration: 2
 });
 
 },{"gsap":"fPSuC","gsap/ScrollTrigger":"7wnFk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fPSuC":[function(require,module,exports) {
