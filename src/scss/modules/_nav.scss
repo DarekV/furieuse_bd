@@ -1,0 +1,11 @@
+.nav-top {
+  position: fixed;
+  margin-top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-acheter {
+  display: flex;
+  justify-content: flex-end;
+}

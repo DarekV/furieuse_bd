@@ -1,0 +1,15 @@
+.map {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.map-background {
+  background-image: url("../img/map.png");
+  height: 200%;
+  width: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+}

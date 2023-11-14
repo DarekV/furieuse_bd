@@ -1,0 +1,38 @@
+.selling {
+  background-color: #1c1c1c;
+  padding: 150px 0;
+}
+
+.selling-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.selling-h2 {
+  font-size: 50px;
+}
+
+.selling-p {
+  margin-top: 50px;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 14px;
+  font-family: indivisible, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.selling-button {
+  margin-top: 80px;
+  padding: 12px 40px 16px;
+  font-size: 24px;
+  background-color: #d01f3d;
+  text-decoration: none;
+  width: 318px;
+}
+
+.selling-img {
+  background-color: white;
+  height: 600px;
+}
