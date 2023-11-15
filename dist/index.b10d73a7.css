@@ -5183,10 +5183,11 @@ footer {
   width: 100%;
   background-image: url("map.1952d5e2.png");
   background-position: center;
-  background-size: 100%;
+  background-size: 101%;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */
