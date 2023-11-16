@@ -169,6 +169,50 @@ gsap.to(".map-path", {
   },
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const mapFirstButton = document.querySelector(".map-first-button");
+  const mapSecondButton = document.querySelector(".map-second-button"); // Ajouter ceci
+  const mapThirdButton = document.querySelector(".map-third-button"); // Ajouter ceci
+
+  const mapContentFirst = document.querySelector(".map-content-first");
+  const mapContentSecond = document.querySelector(".map-content-second"); // Ajouter ceci
+  const mapContentThird = document.querySelector(".map-content-third"); // Ajouter ceci
+
+  const body = document.body;
+
+  const toggleContent = (content) => {
+    const isVisible = content.style.opacity === "1";
+    content.style.opacity = isVisible ? "0" : "1";
+    content.style.pointerEvents = isVisible ? "none" : "auto";
+    body.classList.toggle("no-scroll", !isVisible);
+  };
+
+  mapFirstButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleContent(mapContentFirst);
+  });
+
+  mapSecondButton.addEventListener("click", (e) => {
+    // Ajouter ceci
+    e.preventDefault();
+    toggleContent(mapContentSecond);
+  });
+
+  mapThirdButton.addEventListener("click", (e) => {
+    // Ajouter ceci
+    e.preventDefault();
+    toggleContent(mapContentThird);
+  });
+
+  [mapContentFirst, mapContentSecond, mapContentThird].forEach((content) => {
+    content.addEventListener("click", (e) => {
+      if (e.target === content) {
+        toggleContent(content);
+      }
+    });
+  });
+});
+
 // import { gsap } from "gsap";
 // import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 // import ScrollTrigger from "gsap/ScrollTrigger";

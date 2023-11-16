@@ -3,6 +3,10 @@ body {
   font-family: marvin, sans-serif;
   font-weight: 400;
   font-style: normal;
+  &.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+  }
 }
 
 a {
