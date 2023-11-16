@@ -33,6 +33,11 @@
 }
 
 .selling-img {
-  background-color: white;
-  height: 600px;
+  display: flex;
+  justify-content: center;
+  & img {
+    width: 100%;
+    object-fit: cover;
+    transform: translateY(18px);
+  }
 }

@@ -548,45 +548,53 @@ const tl = (0, _gsap.gsap).timeline({
 });
 tl.to(".map-world", {
     scale: 2.5,
-    x: "50%",
+    x: "55%",
     y: "50%",
-    duration: 4,
+    duration: 2,
     ease: "power1.inOut"
 });
 tl.to(".map-world", {
     scale: 2.5,
     x: "40%",
     y: "35%",
-    duration: 2,
+    duration: 1,
     ease: "power1.inOut"
 });
 tl.to(".map-world", {
     scale: 2.5,
     x: "-20%",
     y: "70%",
-    duration: 4,
+    duration: 2,
     ease: "power1.inOut"
 });
 tl.to(".map-world", {
     scale: 2.5,
     x: "-80%",
     y: "-20%",
-    duration: 4,
+    duration: 3,
     ease: "power1.inOut"
 });
 tl.to(".map-world", {
     scale: 2.5,
-    x: "-70%",
+    x: "-50%",
     y: "-70%",
-    duration: 2,
+    duration: 1,
     ease: "power1.inOut"
 });
 tl.to(".map-world", {
     scale: 1,
     x: "0",
     y: "0",
-    duration: 2,
+    duration: 1,
     ease: "power1.inOut"
+});
+const tlScrollBarMain = (0, _gsap.gsap).timeline({
+    scrollTrigger: {
+        trigger: ".map-viewport",
+        start: "top top",
+        end: "+=20000",
+        scrub: true
+    }
 });
 const tlScrollBar = (0, _gsap.gsap).timeline({
     scrollTrigger: {
@@ -595,6 +603,10 @@ const tlScrollBar = (0, _gsap.gsap).timeline({
         end: "+=5000",
         scrub: true
     }
+});
+tlScrollBar.to(".map-scroll-container", {
+    opacity: 1,
+    ease: "none"
 });
 const tlScrollBar2 = (0, _gsap.gsap).timeline({
     scrollTrigger: {
@@ -606,10 +618,7 @@ const tlScrollBar2 = (0, _gsap.gsap).timeline({
 tlScrollBar2.to(".map-scroll-container", {
     opacity: 0
 });
-tlScrollBar.to(".map-scroll-container", {
-    opacity: 1,
-    ease: "none"
-}, 0).addLabel("animationsStart", "+=5000").add(tlScrollBar2);
+tlScrollBarMain.add(tlScrollBar).addLabel("animationsStart", "+=5000").add(tlScrollBar2);
 (0, _gsap.gsap).to(".map-ysa", {
     x: 520,
     ease: "none",
@@ -639,6 +648,46 @@ baron.from(".map-baron", {
     opacity: 1,
     duration: 1,
     ease: "none"
+});
+(0, _gsap.gsap).to(".map-first-button", {
+    opacity: 1,
+    ease: "none",
+    scrollTrigger: {
+        start: "animationsStart+=5500",
+        end: "+=500",
+        scrub: true
+    }
+});
+(0, _gsap.gsap).to(".map-second-button", {
+    opacity: 1,
+    ease: "none",
+    scrollTrigger: {
+        start: "animationsStart+=10000",
+        end: "+=500",
+        scrub: true
+    }
+});
+(0, _gsap.gsap).to(".map-third-button", {
+    opacity: 1,
+    ease: "none",
+    scrollTrigger: {
+        start: "animationsStart+=18500",
+        end: "+=500",
+        scrub: true
+    }
+});
+const path = document.querySelector(".map-path");
+const length = path.getTotalLength();
+path.style.strokeDasharray = length;
+path.style.strokeDashoffset = length;
+(0, _gsap.gsap).to(".map-path", {
+    strokeDashoffset: 0,
+    ease: "none",
+    scrollTrigger: {
+        start: "animationsStart+=5000",
+        end: "+=15000",
+        scrub: true
+    }
 }); // import { gsap } from "gsap";
  // import { MotionPathPlugin } from "gsap/MotionPathPlugin";
  // import ScrollTrigger from "gsap/ScrollTrigger";

@@ -5065,8 +5065,14 @@ ul {
 }
 
 .selling-img {
-  height: 600px;
-  background-color: #fff;
+  justify-content: center;
+  display: flex;
+}
+
+.selling-img img {
+  width: 100%;
+  object-fit: cover;
+  transform: translateY(18px);
 }
 
 footer {
@@ -5235,6 +5241,33 @@ footer {
   opacity: 0;
   position: absolute;
   transform: translateX(-100px);
+}
+
+.map-first-button {
+  width: 10%;
+  z-index: 20;
+  opacity: 0;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+
+.map-second-button {
+  width: 10%;
+  z-index: 20;
+  opacity: 0;
+  position: absolute;
+  top: 21%;
+  left: 51%;
+}
+
+.map-third-button {
+  width: 10%;
+  z-index: 20;
+  opacity: 0;
+  position: absolute;
+  top: 81%;
+  left: 62%;
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */
