@@ -708,12 +708,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         toggleContent(mapContentFirst);
     });
     mapSecondButton.addEventListener("click", (e)=>{
-        // Ajouter ceci
         e.preventDefault();
         toggleContent(mapContentSecond);
     });
     mapThirdButton.addEventListener("click", (e)=>{
-        // Ajouter ceci
         e.preventDefault();
         toggleContent(mapContentThird);
     });
@@ -725,6 +723,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
         content.addEventListener("click", (e)=>{
             if (e.target === content) toggleContent(content);
         });
+    });
+});
+window.addEventListener("load", ()=>{
+    const loaderWrapper = document.querySelector(".loader-wrapper");
+    const loaderText = document.querySelector(".loader-text");
+    const loaderImg = document.querySelector(".loader-img-sword");
+    const loaderClick = document.querySelector(".loader-img-click");
+    loaderText.style.opacity = "0";
+    loaderImg.style.animation = "spin-once 2s ease-in-out";
+    loaderClick.style.opacity = "100";
+    loaderWrapper.style.cursor = "pointer";
+    loaderWrapper.addEventListener("click", ()=>{
+        loaderWrapper.classList.add("closed");
     });
 }); // import { gsap } from "gsap";
  // import { MotionPathPlugin } from "gsap/MotionPathPlugin";

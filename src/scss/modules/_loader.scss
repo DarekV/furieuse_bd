@@ -1,0 +1,124 @@
+.loader-wrapper {
+  transition: 0.5s;
+  &.closed {
+    pointer-events: none;
+    opacity: 0;
+  }
+}
+
+.loader {
+  position: absolute;
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-text {
+  transition: 0.3s;
+}
+
+.loader-img {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader-img-click {
+  position: absolute;
+  width: 25%;
+  top: 0;
+  right: 20%;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.loader-text-point-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.loader-text-point {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin: 0 5px;
+  background-color: white;
+  animation: grow 2s infinite ease-in-out;
+}
+
+.loader-text-point:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loader-text-point:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.loader-text-point:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.loader-img-sword {
+  transform-origin: center 90%;
+  width: 60%;
+  animation: spin 2s infinite ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.loader-img-line {
+  width: 15%;
+  height: 2px;
+  background-color: white;
+  transform: translateY(-33px);
+  border-radius: 25;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-20deg);
+  }
+  66% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin-once {
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(-20deg);
+  }
+  66% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
