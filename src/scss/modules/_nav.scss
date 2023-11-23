@@ -12,3 +12,12 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.nav-top p {
+  display: inline;
+}
+
+.nav-top p:hover {
+  color: #d01f3d;
+  transition-duration: 0.3s;
+}
