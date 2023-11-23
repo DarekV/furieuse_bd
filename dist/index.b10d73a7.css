@@ -4993,6 +4993,10 @@ img, video {
   vertical-align: middle;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: #f6f6f6;
   font-family: marvin, sans-serif;
@@ -5020,6 +5024,7 @@ ul {
 
 .nav-top {
   z-index: 99;
+  opacity: 0;
   margin-top: 70px;
   font-size: 32px;
   position: fixed;
@@ -5285,6 +5290,7 @@ footer {
   width: 10%;
   z-index: 20;
   opacity: 0;
+  transition-duration: .3s;
   position: absolute;
   top: 20%;
   left: 25%;
@@ -5292,12 +5298,14 @@ footer {
 
 .map-first-button:hover {
   cursor: pointer;
+  scale: 1.1;
 }
 
 .map-second-button {
   width: 10%;
   z-index: 20;
   opacity: 0;
+  transition-duration: .3s;
   position: absolute;
   top: 21%;
   left: 51%;
@@ -5305,12 +5313,14 @@ footer {
 
 .map-second-button:hover {
   cursor: pointer;
+  scale: 1.1;
 }
 
 .map-third-button {
   width: 10%;
   z-index: 20;
   opacity: 0;
+  transition-duration: .3s;
   position: absolute;
   top: 81%;
   left: 62%;
@@ -5318,6 +5328,7 @@ footer {
 
 .map-third-button:hover {
   cursor: pointer;
+  scale: 1.1;
 }
 
 .map-content-first, .map-content-second, .map-content-third {

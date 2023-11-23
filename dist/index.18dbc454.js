@@ -538,6 +538,20 @@ var _scrollTrigger = require("gsap/ScrollTrigger");
 var _scrollTriggerDefault = parcelHelpers.interopDefault(_scrollTrigger);
 (0, _gsap.gsap).registerPlugin((0, _scrollTriggerDefault.default));
 document.addEventListener("DOMContentLoaded", ()=>{
+    (0, _gsap.gsap).to(".nav-top", {
+        scrollTrigger: {
+            trigger: ".header-shadow",
+            start: "top+=50",
+            onEnter: ()=>(0, _gsap.gsap).to(".nav-top", {
+                    opacity: 1,
+                    duration: 0.3
+                }),
+            onLeaveBack: ()=>(0, _gsap.gsap).to(".nav-top", {
+                    opacity: 0,
+                    duration: 0.3
+                })
+        }
+    });
     const tl = (0, _gsap.gsap).timeline({
         scrollTrigger: {
             trigger: ".map-viewport",
@@ -725,7 +739,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             if (e.target === content) toggleContent(content);
         });
     });
-    const topValue = window.innerWidth > 1440 ? -500 : -300;
+    const topValue = window.innerWidth > 1440 ? -600 : -300;
     (0, _gsap.gsap).to(".header-img-1", {
         scrollTrigger: {
             trigger: ".header-img-wrapper",
@@ -733,7 +747,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             end: "bottom top",
             scrub: 2
         },
-        top: 50,
+        top: -200,
         duration: 1
     });
     (0, _gsap.gsap).to(".header-img-2", {
@@ -743,7 +757,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             end: "bottom top",
             scrub: 2
         },
-        top: 50,
+        top: -200,
         duration: 1
     });
     (0, _gsap.gsap).to(".header-img-6", {
@@ -753,7 +767,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             end: "bottom top",
             scrub: 2
         },
-        top: 50,
+        top: 300,
         duration: 1
     });
     (0, _gsap.gsap).to(".header-img-3", {

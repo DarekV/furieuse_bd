@@ -4,6 +4,15 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.to(".nav-top", {
+    scrollTrigger: {
+      trigger: ".header-shadow",
+      start: "top+=50",
+      onEnter: () => gsap.to(".nav-top", { opacity: 1, duration: 0.3 }),
+      onLeaveBack: () => gsap.to(".nav-top", { opacity: 0, duration: 0.3 }),
+    },
+  });
+
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".map-viewport",
@@ -211,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const topValue = window.innerWidth > 1440 ? -500 : -300;
+  const topValue = window.innerWidth > 1440 ? -600 : -300;
 
   gsap.to(".header-img-1", {
     scrollTrigger: {
@@ -220,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",
       scrub: 2,
     },
-    top: 50,
+    top: -200,
     duration: 1,
   });
 
@@ -231,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",
       scrub: 2,
     },
-    top: 50,
+    top: -200,
     duration: 1,
   });
 
@@ -242,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
       end: "bottom top",
       scrub: 2,
     },
-    top: 50,
+    top: 300,
     duration: 1,
   });
 

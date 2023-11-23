@@ -70,8 +70,10 @@
   top: 20%;
   left: 25%;
   opacity: 0;
+  transition-duration: 0.3s;
   &:hover {
     cursor: pointer;
+    scale: 1.1;
   }
 }
 
@@ -82,8 +84,10 @@
   top: 21%;
   left: 51%;
   opacity: 0;
+  transition-duration: 0.3s;
   &:hover {
     cursor: pointer;
+    scale: 1.1;
   }
 }
 
@@ -94,8 +98,10 @@
   top: 81%;
   left: 62%;
   opacity: 0;
+  transition-duration: 0.3s;
   &:hover {
     cursor: pointer;
+    scale: 1.1;
   }
 }
 
