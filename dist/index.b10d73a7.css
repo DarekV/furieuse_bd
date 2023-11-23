@@ -4998,11 +4998,16 @@ body {
   font-family: marvin, sans-serif;
   font-style: normal;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 body.no-scroll {
   height: 100vh;
   overflow: hidden;
+}
+
+header {
+  background-color: #313131;
 }
 
 a {
@@ -5014,7 +5019,9 @@ ul {
 }
 
 .nav-top {
+  z-index: 99;
   margin-top: 70px;
+  font-size: 32px;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -5025,16 +5032,42 @@ ul {
   display: flex;
 }
 
-.header-img {
+.header-img-wrapper {
   width: 100%;
-  height: 90vh;
-  background-color: gray;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-img {
+  object-fit: cover;
+  will-change: transform;
+  position: absolute;
+  top: -20%;
+}
+
+.header-img-1, .header-img-2, .header-img-6 {
+  scale: 1.2;
 }
 
 .header-shadow {
   width: 100%;
-  height: 200px;
-  background: linear-gradient(360deg, #1c1cff 64.77%, #1f1f1f00 97.2%);
+  height: 250px;
+  background: linear-gradient(360deg, #313131 50.77%, #1f1f1f00 79.2%);
+  transform: translateY(-125px);
+}
+
+@media (min-width: 1441px) {
+  .header-img {
+    top: -35%;
+  }
+
+  .header-img-wrapper {
+    height: 120vh;
+  }
 }
 
 .selling {
@@ -5257,6 +5290,10 @@ footer {
   left: 25%;
 }
 
+.map-first-button:hover {
+  cursor: pointer;
+}
+
 .map-second-button {
   width: 10%;
   z-index: 20;
@@ -5266,6 +5303,10 @@ footer {
   left: 51%;
 }
 
+.map-second-button:hover {
+  cursor: pointer;
+}
+
 .map-third-button {
   width: 10%;
   z-index: 20;
@@ -5273,6 +5314,10 @@ footer {
   position: absolute;
   top: 81%;
   left: 62%;
+}
+
+.map-third-button:hover {
+  cursor: pointer;
 }
 
 .map-content-first, .map-content-second, .map-content-third {
@@ -5309,7 +5354,11 @@ footer {
 }
 
 .loader-wrapper {
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
   transition: all .5s;
+  position: fixed;
 }
 
 .loader-wrapper.closed {
@@ -5318,7 +5367,6 @@ footer {
 }
 
 .loader {
-  z-index: 999;
   width: 100vw;
   height: 100vh;
   background-color: #1c1c1c;

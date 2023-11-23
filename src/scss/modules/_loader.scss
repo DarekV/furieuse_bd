@@ -1,5 +1,9 @@
 .loader-wrapper {
   transition: 0.5s;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
   &.closed {
     pointer-events: none;
     opacity: 0;
@@ -8,7 +12,6 @@
 
 .loader {
   position: absolute;
-  z-index: 999;
   width: 100vw;
   height: 100vh;
   background-color: #1c1c1c;

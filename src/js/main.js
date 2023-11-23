@@ -171,12 +171,12 @@ gsap.to(".map-path", {
 
 document.addEventListener("DOMContentLoaded", () => {
   const mapFirstButton = document.querySelector(".map-first-button");
-  const mapSecondButton = document.querySelector(".map-second-button"); // Ajouter ceci
-  const mapThirdButton = document.querySelector(".map-third-button"); // Ajouter ceci
+  const mapSecondButton = document.querySelector(".map-second-button");
+  const mapThirdButton = document.querySelector(".map-third-button");
 
   const mapContentFirst = document.querySelector(".map-content-first");
-  const mapContentSecond = document.querySelector(".map-content-second"); // Ajouter ceci
-  const mapContentThird = document.querySelector(".map-content-third"); // Ajouter ceci
+  const mapContentSecond = document.querySelector(".map-content-second");
+  const mapContentThird = document.querySelector(".map-content-third");
 
   const body = document.body;
 
@@ -184,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isVisible = content.style.opacity === "1";
     content.style.opacity = isVisible ? "0" : "1";
     content.style.pointerEvents = isVisible ? "none" : "auto";
+    content.style.cursor = isVisible ? "auto" : "pointer";
     body.classList.toggle("no-scroll", !isVisible);
   };
 
@@ -216,12 +217,86 @@ window.addEventListener("load", () => {
   const loaderText = document.querySelector(".loader-text");
   const loaderImg = document.querySelector(".loader-img-sword");
   const loaderClick = document.querySelector(".loader-img-click");
+  const body = document.body;
   loaderText.style.opacity = "0";
   loaderImg.style.animation = "spin-once 2s ease-in-out";
   loaderClick.style.opacity = "100";
   loaderWrapper.style.cursor = "pointer";
   loaderWrapper.addEventListener("click", () => {
     loaderWrapper.classList.add("closed");
+    body.classList.remove("no-scroll");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const topValue = window.innerWidth > 1440 ? -500 : -300;
+
+  gsap.to(".header-img-1", {
+    scrollTrigger: {
+      trigger: ".header-img-wrapper",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2,
+    },
+    top: 50,
+    duration: 1,
+  });
+
+  gsap.to(".header-img-2", {
+    scrollTrigger: {
+      trigger: ".header-img-wrapper",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2,
+    },
+    top: 50,
+    duration: 1,
+  });
+
+  gsap.to(".header-img-6", {
+    scrollTrigger: {
+      trigger: ".header-img-wrapper",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2,
+    },
+    top: 50,
+    duration: 1,
+  });
+
+  gsap.to(".header-img-3", {
+    scrollTrigger: {
+      trigger: ".header-img-wrapper",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2,
+    },
+    top: topValue,
+    duration: 1,
+  });
+
+  gsap.to(".header-img-4", {
+    scrollTrigger: {
+      trigger: ".header-img-wrapper",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2,
+    },
+    top: topValue - 50, // Ajustez si nécessaire pour cette image
+    duration: 1,
+  });
+
+  gsap.to(".header-img-5", {
+    scrollTrigger: {
+      trigger: ".header-img-wrapper",
+      start: "top top",
+      end: "bottom top",
+      scrub: 2,
+    },
+    top: topValue,
+    duration: 1,
   });
 });
 

@@ -1,8 +1,10 @@
 .nav-top {
   position: fixed;
+  z-index: 99;
   margin-top: 70px;
   left: 50%;
   transform: translateX(-50%);
+  font-size: 32px;
 }
 
 .nav-acheter {
